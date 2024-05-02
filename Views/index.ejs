@@ -1,0 +1,125 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<%- include('component/head') -%>
+
+<body>
+  
+    <%- include('component/header') -%> 
+    <!-- slider_area_start -->
+    <div class="slider_area">
+        <div class="single_slider  d-flex align-items-center slider_bg_1">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-7 col-md-6">
+                        <div class="slider_text">
+                            <h5 class="wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".2s">4536+ Jobs listed</h5>
+                            <h3 class="wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".3s">Find your Dream Job</h3>
+                            <p class="wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".4s">We provide online instant cash loans with quick approval that suit your term length</p>
+                            
+                            <div class="sldier_btn wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".5s">
+                                <a href="/jobs" class="boxed-btn3">Find Your Job</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ilstration_img wow fadeInRight d-none d-lg-block text-right" data-wow-duration="1s" data-wow-delay=".2s">
+            <img src="img/banner/illustration.png" alt="">
+        </div>
+    </div>
+    <!-- slider_area_end -->
+
+    <!-- popular_catagory_area_start  -->
+    <div class="popular_catagory_area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section_title mb-40">
+                        <h3>Popolar Categories</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <% categories.forEach(Category=>{ %>
+                <div class="col-lg-4 col-xl-3 col-md-6">
+                    <div class="single_catagory">
+                        <a href=""><h4> <%= Category.title %></h4></a>
+                        <p> <span>50</span> Available position</p>
+                    </div>
+                </div> 
+                <% });%>
+            </div>
+        </div>
+    </div>
+    <!-- popular_catagory_area_end  -->
+
+    <!-- featured_candidates_area_start  -->  
+    <div class="featured_candidates_area">
+        <div class="container">
+            <div class="row">                
+                <div class="col-lg-12">
+                    <div class="section_title text-center mb-40">
+                        <h3>Featured Candidates</h3>
+                    </div>
+                </div>              
+            </div>
+            <div class="row">
+                <div class="col-lg-12">          
+                    <div class="candidate_active owl-carousel">
+                        <% admins.forEach(admin=>{ %>
+                        <div class="single_candidates text-center">
+                            <div class="thumb">
+
+                                <% if(admin.gender == "female") {%>
+                                    <!-- <img src="data:image/jpeg;base64,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" alt="avatar"
+                                    class="rounded-circle img-fluid" style="width: 150px;"> -->
+                                    <img src="https://cdn3.iconfinder.com/data/icons/avatars-business-human1/180/woman1-512.png" alt="avatar"
+                                    class="rounded-circle img-fluid" style="width: 150px;">
+                                      <% }else {%>
+                                    <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt="avatar"
+                                    class="rounded-circle img-fluid" style="width: 150px;">
+                                    <% }%>
+                            </div>
+                            <a href="#"><h4><%= admin.name %></h4></a>
+                            <p><%= admin.job_title %></p>
+                        </div>
+                        <% }) %>
+                    </div>                 
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <!-- featured_candidates_area_end  -->
+
+    <!-- job_searcing_wrap  -->
+    <div class="job_searcing_wrap overlay">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 offset-lg-1 col-md-6">
+                    <div class="searching_text">
+                        <h3>Looking for a Job?</h3>
+                        <p>We provide online instant cash loans with quick approval </p>
+                        <a href="/jobs" class="boxed-btn3">Browse Job</a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-5 offset-lg-1 col-md-6">
+                    <div class="searching_text">
+                        <h3>Looking for a Expert?</h3>
+                        <p>We provide online instant cash loans with quick approval </p>
+                        <a href="/post_job" class="boxed-btn3">Post a Job</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- job_searcing_wrap end  -->
+
+    <%- include('component/footer') -%> 
+    <%- include('component/include_files') -%> 
+</body>
+
+</html>

@@ -1,0 +1,131 @@
+<!doctype html>
+
+<html class="no-js" lang="zxx">
+    <%- include('component/head') -%>
+    <body>
+        <div class="single_slider   slider_bg_1">
+            <%- include('component/header') -%>
+            <!-- bradcam_area  -->
+            <div class="bradcam_area bradcam_bg_1">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="bradcam_text">
+                                <h3>  Add New Job </h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--/ bradcam_area  -->
+            <div class="container">
+                <div class="d-flex justify-content-center align-items-center">
+                    <form  action ="/post_job" method ="POST">               
+                        <div class="modal-body">	
+                        
+                            <div class="form-group">
+                                <label>title</label>
+                                <input type="text" class="form-control"  name="title" required>
+                            </div>
+                            <hr>
+                            <div class="form-group">
+                            
+                                <label>Job type</label>
+                                <select name="job_type">
+                                    <optgroup label="Group 1">
+                                    <option value="part time"  name="job_type" >part time</option>
+                                    <option value="full time"  name="job_type" >full time</option>
+                                
+                                </optgroup>
+                                </select>
+                            </div> 
+                            <hr>    
+                            <div class="form-group">
+                            <!-- it will be dynamic -->
+                                <label>categoriy</label>
+                                <br>
+                                <select name="categoriy">
+                                    <optgroup label="Group 1">
+                                    <option value="Administration"  name="categoriy" >Administration</option>
+                                    <option value="Marketing"  name="categoriy" >Marketing</option>
+                                    <option value="Design & Creative"  name="categoriy" >Design & Creative</option>
+                                    <option value="Management"  name="categoriy" >Management</option>
+                                    <option value="Human Resources"  name="categoriy" >Human Resources</option>
+                                    <option value="Computers and information technology"  name="categoriy">Computers and IT</option>
+                                    
+                                </optgroup>
+                                </select>
+                                <br>
+                            </div>                                      
+                            <hr>
+                            <div class="form-group">
+                                <label>experience</label>
+                            <input type="text" class="form-control" name="experience" required>
+                            </div>
+                            <hr>     
+                            <div class="form-group">
+                                <label>location</label>
+                                <textarea class="form-control" name="location" required></textarea>
+                            </div>
+                            <hr>                     
+                            <div class="form-group">
+                                <label>published_on</label>
+                                
+                                <input type="date" name="published_on" id="date">                                     
+                        </div>
+                        <hr>    
+                            <div class="form-group">
+                                    <label>deadline</label>
+                                    <input type="date" name="deadline" id="date">
+                                
+                            </div>
+                            <hr>                        
+                            <div class="form-group">
+                                <label>vacancy</label>
+                                <input type="text" class="form-control" name="vacancy" required>
+                                
+                            </div>                      
+                            <hr>                     
+                            <div class="form-group">
+                                <label>salary</label>
+                                <input type="text" class="form-control" name="slary" required>
+                            </div>
+                            <hr>    
+                            <div class="form-group">
+                                <label>owner</label>
+                                <input type="text" class="form-control" name="owner">
+                            </div>
+                            <hr>    
+                            <div class="form-group">
+                                <label>Qualifications</label>
+                                <textarea class="form-control" name="Qualifications" ></textarea>
+                            </div>
+                            <hr>    
+                            <div class="form-group">
+                                <label>Responsibility</label>
+                                <textarea class="form-control" name="Responsibility" ></textarea>
+                            </div>
+                            
+                            <hr>    
+                            <hr>    
+                            
+                            
+                        </div>
+                        <div class="modal-footer">
+                            <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                            <input type="submit" class="btn btn-success" value="Add ">
+                        </div>
+                        <hr>    
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+
+ 
+    <%- include('component/footer') -%>
+    <%- include('component/include_files') -%>
+</body>
+
+</html>

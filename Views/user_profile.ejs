@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+   <%- include('component/head') -%>
+  <body>
+
+    <%- include('component/header') -%>
+    <!-- bradcam_area  -->
+     <div class="bradcam_area bradcam_bg_1">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="bradcam_text">
+                            <h3> User Profile </h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+     </div>
+    <!--/ bradcam_area  -->
+    <% users.forEach( user => { %>       
+    <section style="background-color: #eee;">
+            <div class="container py-5">
+              <div class="row">
+                <div class="col-lg-4">
+                  <div class="card mb-4">
+                    <div class="card-body text-center">
+                      <!-- <img src="<%= user.image %>" alt="avatar"
+                        class="rounded-circle img-fluid" style="width: 150px;"> -->
+                        <% if(user.gender == "female") {%>
+                        <!-- <img src="data:image/jpeg;base64,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" alt="avatar"
+                        class="rounded-circle img-fluid" style="width: 150px;"> -->
+                          <img src="https://cdn3.iconfinder.com/data/icons/avatars-business-human1/180/woman1-512.png" alt="avatar"
+                        class="rounded-circle img-fluid" style="width: 150px;">
+                          <% }else {%>
+                        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt="avatar"
+                        class="rounded-circle img-fluid" style="width: 150px;">
+                        <% }%>
+                      <h5 class="my-3"> <%= user.name %></h5>
+                      <p class="text-muted mb-1"> <%= user.job_title %></p>
+                      <p class="text-muted mb-4"> <%= user.education %></p>
+                      <!-- <div class="d-flex justify-content-center mb-2">
+                        <button type="button" class="btn btn-primary">Follow</button>
+                        <button type="button" class="btn btn-outline-primary ms-1">Message</button>
+                      </div> -->
+                    </div>
+                  </div>
+
+                </div>
+
+
+                <div class="col-lg-8">
+                  <div class="card mb-4">
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="col-sm-3">
+                          <p class="mb-0">Full Name</p>
+                        </div>
+                        <div class="col-sm-9">
+                          <p class="text-muted mb-0"> <%= user.name %></p>
+                        </div>
+                      </div>
+                      <hr>
+                      <div class="row">
+                        <div class="col-sm-3">
+                          <p class="mb-0">Email</p>
+                        </div>
+                        <div class="col-sm-9">
+                          <p class="text-muted mb-0"> <%= user.email %></p>
+                        </div>
+                      </div>
+                      <hr>
+                      <div class="row">
+                        <div class="col-sm-3">
+                          <p class="mb-0">Age </p>
+                        </div>
+                        <div class="col-sm-9">
+                          <p class="text-muted mb-0"> <%= user.age %></p>
+                        </div>
+                      </div>
+                      <hr>
+                      <div class="row">
+                        <div class="col-sm-3">
+                          <p class="mb-0">Gender </p>
+                        </div>
+                        <div class="col-sm-9">
+                          <p class="text-muted mb-0"> <%= user.gender %></p>
+                        </div>
+                      </div>
+                      <hr>
+                      <div class="row">
+                        <div class="col-sm-3">
+                          <p class="mb-0">Phone</p>
+                        </div>
+                        <div class="col-sm-9">
+                          <p class="text-muted mb-0"> <%= user.phone_number %></p>
+                        </div>
+                      </div>
+                      <hr>
+                      <div class="row">
+                        <div class="col-sm-3">
+                          <p class="mb-0">Address</p>
+                        </div>
+                        <div class="col-sm-9">
+                          <p class="text-muted mb-0"><%= user.address %></p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+                  <!-- <div class="row">
+                    <div class="col-md-6">
+                      <div class="card mb-4 mb-md-0">
+                        <div class="card-body">
+                          <p class="mb-4"><span class="text-primary font-italic me-1">assigment</span> Project Status
+                          </p>
+                          <p class="mb-1" style="font-size: .77rem;">Web Design</p>
+                          <div class="progress rounded" style="height: 5px;">
+                            <div class="progress-bar" role="progressbar" style="width: 80%" aria-valuenow="80"
+                              aria-valuemin="0" aria-valuemax="100"></div>
+                          </div>
+                          <p class="mt-4 mb-1" style="font-size: .77rem;">Website Markup</p>
+                          <div class="progress rounded" style="height: 5px;">
+                            <div class="progress-bar" role="progressbar" style="width: 72%" aria-valuenow="72"
+                              aria-valuemin="0" aria-valuemax="100"></div>
+                          </div>
+                          <p class="mt-4 mb-1" style="font-size: .77rem;">One Page</p>
+                          <div class="progress rounded" style="height: 5px;">
+                            <div class="progress-bar" role="progressbar" style="width: 89%" aria-valuenow="89"
+                              aria-valuemin="0" aria-valuemax="100"></div>
+                          </div>
+                          <p class="mt-4 mb-1" style="font-size: .77rem;">Mobile Template</p>
+                          <div class="progress rounded" style="height: 5px;">
+                            <div class="progress-bar" role="progressbar" style="width: 55%" aria-valuenow="55"
+                              aria-valuemin="0" aria-valuemax="100"></div>
+                          </div>
+                          <p class="mt-4 mb-1" style="font-size: .77rem;">Backend API</p>
+                          <div class="progress rounded mb-2" style="height: 5px;">
+                            <div class="progress-bar" role="progressbar" style="width: 66%" aria-valuenow="66"
+                              aria-valuemin="0" aria-valuemax="100"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="card mb-4 mb-md-0">
+                        <div class="card-body">
+                          <p class="mb-4"><span class="text-primary font-italic me-1">assigment</span> Project Status
+                          </p>
+                          <p class="mb-1" style="font-size: .77rem;">Web Design</p>
+                          <div class="progress rounded" style="height: 5px;">
+                            <div class="progress-bar" role="progressbar" style="width: 80%" aria-valuenow="80"
+                              aria-valuemin="0" aria-valuemax="100"></div>
+                          </div>
+                          <p class="mt-4 mb-1" style="font-size: .77rem;">Website Markup</p>
+                          <div class="progress rounded" style="height: 5px;">
+                            <div class="progress-bar" role="progressbar" style="width: 72%" aria-valuenow="72"
+                              aria-valuemin="0" aria-valuemax="100"></div>
+                          </div>
+                          <p class="mt-4 mb-1" style="font-size: .77rem;">One Page</p>
+                          <div class="progress rounded" style="height: 5px;">
+                            <div class="progress-bar" role="progressbar" style="width: 89%" aria-valuenow="89"
+                              aria-valuemin="0" aria-valuemax="100"></div>
+                          </div>
+                          <p class="mt-4 mb-1" style="font-size: .77rem;">Mobile Template</p>
+                          <div class="progress rounded" style="height: 5px;">
+                            <div class="progress-bar" role="progressbar" style="width: 55%" aria-valuenow="55"
+                              aria-valuemin="0" aria-valuemax="100"></div>
+                          </div>
+                          <p class="mt-4 mb-1" style="font-size: .77rem;">Backend API</p>
+                          <div class="progress rounded mb-2" style="height: 5px;">
+                            <div class="progress-bar" role="progressbar" style="width: 66%" aria-valuenow="66"
+                              aria-valuemin="0" aria-valuemax="100"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div> -->
+                </div>
+              </div>
+
+              
+            </div>
+    </section>
+    <% }); %>
+    <%- include('component/footer') -%> 
+    <%- include('component/include_files') -%> 
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('component/head') -%>
+
+
+<body>
+        <div class="single_slider   slider_bg_1">
+            <%- include('component/header') -%>
+        <!-- bradcam_area  -->
+        <div class="bradcam_area bradcam_bg_1">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="bradcam_text">
+                            <h3> Edit Job </h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--/ bradcam_area  -->
+        <% jobs.forEach( job => { %>
+            <div class="container">
+                <div class="row gutters"> 
+
+                <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
+                      <div class="card h-100">
+                        <div class="card-body">
+                            <div class="row gutters">
+                               
+                                <form  action ="/update_job/<%= job.id%>" method ="POST">               
+                                    <div class="modal-body">	
+                                        
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                                <label>title</label>
+                                            </div>
+                                            <div class="col-sm-9">
+                                                <input type="text" class="form-control"  name="title" value="<%= job.title %>" required>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                    
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                            <label>jobType</label>
+                                            </div>
+                                            <div class="col-sm-9">
+                                            <input type="text" class="form-control" name="job_type" value="<%= job.job_type %>" required>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                            <label>experience</label>
+                                            </div>
+                                            <div class="col-sm-9">
+                                            <input type="text" class="form-control" name="experience" value="<%= job.experience %>" required>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                            <label>location</label>
+                                            </div>
+                                            <div class="col-sm-9">
+                                                <input type="text"  name="location" value="<%= job.location %>" required > 
+                                            
+                                            </div>
+                                        </div>
+                                        <hr>                     
+                                        <div class="form-group">
+                                            <label>published_on</label>
+                                            <input type="date" name="published_on" id="date" value="<%= job.published_on %>">                                     
+                                    </div>
+                                    <hr>    
+                                        <div class="form-group">
+                                                <label>deadline</label>
+                                                <input type="date" name="deadline" id="date"value="<%= job.deadline %>">
+                                            
+                                        </div>
+                                        <hr>
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                            <label>vacancy</label>
+                                            </div>
+                                            <div class="col-sm-9">
+                                                <input type="text" class="form-control" name="vacancy"  value="<%= job.vacancy %>" required>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        
+                                        <div class="form-group">
+                                            <label>salary</label>
+                                            <input type="text" class="form-control" name="slary" value="<%= job.slary %>" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>owner</label>
+                                            <input type="text" class="form-control" value="<%= job.owner %>" name="owner">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>categoriy</label>
+                                            <input type="text" class="form-control" name="categoriy" value="<%= job.categoriy %>">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Qualifications</label>
+                                            <input type="text" class="form-control" name="Qualifications" value="<%= job.Qualifications %>" >
+                                            
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Responsibility</label>
+                                            <input type="text" class="form-control" name="Responsibility" value="<%= job.Responsibility %>">
+                                            
+                                    </div>
+                
+                
+                                        
+                                        
+                                    </div>
+                                    <div class="modal-footer">
+                                        
+                                        <input type="submit" class="btn btn-success" value="Update ">
+                                    </div>
+                                </form>
+                                
+                            </div></div></div></div>
+                </div>
+            </div>
+        
+        
+            <% }) %>
+
+            <%- include('component/footer') -%>
+            <%- include('component/include_files') -%>
+      
+
+</body>
+</html>
